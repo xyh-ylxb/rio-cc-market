@@ -3,26 +3,26 @@
   "version": "1.0.0",
   "description": "Rio's Claude Code plugin marketplace",
   "author": "Rio",
-  "source": "git@github.com:xyh-ylxb/rio-cc-market.git",
+  "owner": "xyh-ylxb",
+  "source": "https://github.com/xyh-ylxb/rio-cc-market.git",
   "plugins": [
     {
       "name": "rio-plugin",
       "version": "1.0.0",
       "description": "A collection of useful utilities and commands for daily development workflow",
-      "path": "plugins/rio-plugin",
       "commands": [
-        "Vengineer:core:plan",
-        "Vengineer:core:work",
-        "Vengineer:core:review",
-        "Vengineer:core:compound",
-        "Vengineer:core:deepen-plan",
-        "Vengineer:core:plan-review",
-        "Vengineer:utils:pr-summary-cn",
-        "Vengineer:utils:resolve-todos",
-        "Vengineer:utils:create-agent-skill",
-        "Vengineer:utils:create-command",
-        "Vengineer:utils:heal-skill",
-        "Vengineer:utils:report-bug"
+        "./commands/core/plan.md",
+        "./commands/core/work.md",
+        "./commands/core/review.md",
+        "./commands/core/compound.md",
+        "./commands/core/deepen-plan.md",
+        "./commands/core/plan_review.md",
+        "./commands/pr-summary-cn.md",
+        "./commands/resolve-todos-in-repo.md",
+        "./commands/utils/create-agent-skill.md",
+        "./commands/utils/create-command.md",
+        "./commands/utils/heal-skill.md",
+        "./commands/utils/report-bug-issue.md"
       ]
     }
   ]
