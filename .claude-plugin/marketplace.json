@@ -12,6 +12,7 @@
       "name": "rio-plugin",
       "version": "1.0.0",
       "description": "A collection of useful utilities and commands for daily development workflow",
+      "source": "./plugins/rio-plugin",
       "commands": [
         "./plugins/rio-plugin/commands/core/plan.md",
         "./plugins/rio-plugin/commands/core/work.md",
