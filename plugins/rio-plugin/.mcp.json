@@ -1,5 +1,5 @@
 {
-    "mcpServers": {
+  "mcpServers": {
     "exa": {
       "type": "http",
       "url": "https://mcp.exa.ai/mcp",
@@ -12,6 +12,14 @@
     "context7": {
       "type": "http",
       "url": "https://mcp.context7.com/mcp"
+    },
+    "xmind": {
+      "command": "npx",
+      "args": ["xmind-generator-mcp"],
+      "env": {
+        "outputPath": "/tmp/xmind-generator-mcp",
+        "autoOpenFile": "false"
+      }
     }
   }
 }
