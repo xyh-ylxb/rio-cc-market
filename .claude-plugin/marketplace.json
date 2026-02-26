@@ -1,0 +1,20 @@
+{
+  "name": "rio-cc-market",
+  "version": "1.0.0",
+  "description": "Rio's Claude Code plugin marketplace",
+  "author": "Rio",
+  "source": "git@github.com:xyh-ylxb/rio-cc-market.git",
+  "plugins": [
+    {
+      "name": "rio-plugin",
+      "version": "1.0.0",
+      "description": "A collection of useful utilities and commands for daily development workflow",
+      "path": "plugins/rio-plugin",
+      "commands": [
+        "rio:greet",
+        "rio:status",
+        "rio:todo"
+      ]
+    }
+  ]
+}

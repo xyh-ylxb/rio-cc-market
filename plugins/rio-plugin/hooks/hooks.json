@@ -1,0 +1,15 @@
+{
+  "description": "Automatically add language preference context based on user input language (Chinese vs English)",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/add-language-context.py"
+          }
+        ]
+      }
+    ]
+  }
+}
