@@ -56,7 +56,7 @@ nano ~/.claude/plugins/rio-plugin/.mcp.json
 
 ```bash
 # 测试基本命令
-/Vengineer:core:plan "测试计划"
+/core:plan "测试计划"
 
 # 查看所有可用命令
 /help | grep Vengineer
@@ -193,18 +193,18 @@ npm install -g xmind-generator-mcp
 
 ### 3.1 核心命令
 
-#### /Vengineer:core:plan - 项目规划
+#### /core:plan - 项目规划
 
 **功能**：将功能需求转化为结构化的项目计划
 
 **语法**：
 ```bash
-/Vengineer:core:plan "[功能描述]"
+/core:plan "[功能描述]"
 ```
 
 **示例**：
 ```bash
-/Vengineer:core:plan "实现用户认证系统，支持邮箱和GitHub登录"
+/core:plan "实现用户认证系统，支持邮箱和GitHub登录"
 ```
 
 **输出**：
@@ -220,18 +220,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:core:work - 执行计划
+#### /core:work - 执行计划
 
 **功能**：自动执行项目计划
 
 **语法**：
 ```bash
-/Vengineer:core:work [计划文件路径]
+/core:work [计划文件路径]
 ```
 
 **示例**：
 ```bash
-/Vengineer:core:work plans/user-auth-system.md
+/core:work plans/user-auth-system.md
 ```
 
 **工作流程**：
@@ -248,25 +248,25 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:core:review - 代码审查
+#### /core:review - 代码审查
 
 **功能**：多维度代码质量审查
 
 **语法**：
 ```bash
-/Vengineer:core:review [分支名或描述]
+/core:review [分支名或描述]
 ```
 
 **示例**：
 ```bash
 # 审查当前分支
-/Vengineer:core:review
+/core:review
 
 # 审查指定分支
-/Vengineer:core:review "feature/user-authentication"
+/core:review "feature/user-authentication"
 
 # 审查特定目录
-/Vengineer:core:review "src/auth/"
+/core:review "src/auth/"
 ```
 
 **审查维度**：
@@ -278,18 +278,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:core:compound - 知识积累
+#### /core:compound - 知识积累
 
 **功能**：记录和存档解决方案
 
 **语法**：
 ```bash
-/Vengineer:core:compound "[问题描述和解决方案]"
+/core:compound "[问题描述和解决方案]"
 ```
 
 **示例**：
 ```bash
-/Vengineer:core:compound "解决了 Nginx 在高并发下的连接超时问题：增加 worker_connections 并优化 keepalive_timeout"
+/core:compound "解决了 Nginx 在高并发下的连接超时问题：增加 worker_connections 并优化 keepalive_timeout"
 ```
 
 **输出**：
@@ -305,18 +305,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:core:deepen-plan - 深化计划
+#### /core:deepen-plan - 深化计划
 
 **功能**：为计划添加深度和细节
 
 **语法**：
 ```bash
-/Vengineer:core:deepen-plan [计划文件路径]
+/core:deepen-plan [计划文件路径]
 ```
 
 **示例**：
 ```bash
-/Vengineer:core:deepen-plan plans/basic-feature.md
+/core:deepen-plan plans/basic-feature.md
 ```
 
 **增强内容**：
@@ -327,18 +327,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:core:plan-review - 计划评审
+#### /core:plan-review - 计划评审
 
 **功能**：多专家并行评审计划
 
 **语法**：
 ```bash
-/Vengineer:core:plan-review [计划文件路径]
+/core:plan-review [计划文件路径]
 ```
 
 **示例**：
 ```bash
-/Vengineer:core:plan-review plans/payment-integration.md
+/core:plan-review plans/payment-integration.md
 ```
 
 **评审角度**：
@@ -351,25 +351,25 @@ npm install -g xmind-generator-mcp
 
 ### 3.2 工具命令
 
-#### /Vengineer:utils:pr-summary-cn - PR 摘要生成
+#### /utils:pr-summary-cn - PR 摘要生成
 
 **功能**：自动生成中文 PR 摘要
 
 **语法**：
 ```bash
-/Vengineer:utils:pr-summary-cn [基础分支]
+/utils:pr-summary-cn [基础分支]
 ```
 
 **示例**：
 ```bash
 # 相对于 master
-/Vengineer:utils:pr-summary-cn master
+/utils:pr-summary-cn master
 
 # 相对于 develop
-/Vengineer:utils:pr-summary-cn develop
+/utils:pr-summary-cn develop
 
 # 相对于特定分支
-/Vengineer:utils:pr-summary-cn feature/auth-base
+/utils:pr-summary-cn feature/auth-base
 ```
 
 **输出结构**：
@@ -388,25 +388,25 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:utils:resolve-todos - TODO 解析
+#### /utils:resolve-todos - TODO 解析
 
 **功能**：并行处理所有 TODO 注释
 
 **语法**：
 ```bash
-/Vengineer:utils:resolve-todos [文件或目录路径]
+/utils:resolve-todos [文件或目录路径]
 ```
 
 **示例**：
 ```bash
 # 处理整个项目
-/Vengineer:utils:resolve-todos src/
+/utils:resolve-todos src/
 
 # 处理特定文件
-/Vengineer:utils:resolve-todos components/UserAuth.tsx
+/utils:resolve-todos components/UserAuth.tsx
 
 # 处理当前目录
-/Vengineer:utils:resolve-todos .
+/utils:resolve-todos .
 ```
 
 **工作流程**：
@@ -417,18 +417,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:utils:create-agent-skill - 创建 Agent
+#### /utils:create-agent-skill - 创建 Agent
 
 **功能**：创建自定义 AI agent
 
 **语法**：
 ```bash
-/Vengineer:utils:create-agent-skill "[agent 描述]"
+/utils:create-agent-skill "[agent 描述]"
 ```
 
 **示例**：
 ```bash
-/Vengineer:utils:create-agent-skill "创建一个 TypeScript 专家 agent，专注于类型系统和最佳实践"
+/utils:create-agent-skill "创建一个 TypeScript 专家 agent，专注于类型系统和最佳实践"
 ```
 
 **输出**：
@@ -437,18 +437,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:utils:create-command - 创建命令
+#### /utils:create-command - 创建命令
 
 **功能**：创建自定义 slash 命令
 
 **语法**：
 ```bash
-/Vengineer:utils:create-command "[命令目的和需求]"
+/utils:create-command "[命令目的和需求]"
 ```
 
 **示例**：
 ```bash
-/Vengineer:utils:create-command "创建一个数据库迁移命令，自动生成迁移文件"
+/utils:create-command "创建一个数据库迁移命令，自动生成迁移文件"
 ```
 
 **输出**：
@@ -457,22 +457,22 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:utils:heal-skill - 修复技能
+#### /utils:heal-skill - 修复技能
 
 **功能**：修复损坏的 SKILL.md 文件
 
 **语法**：
 ```bash
-/Vengineer:utils:heal-skill [技能名称]
+/utils:heal-skill [技能名称]
 ```
 
 **示例**：
 ```bash
 # 修复特定技能
-/Vengineer:utils:heal-skill "my-custom-skill"
+/utils:heal-skill "my-custom-skill"
 
 # 修复所有损坏的技能（扫描模式）
-/Vengineer:utils:heal-skill
+/utils:heal-skill
 ```
 
 **修复内容**：
@@ -482,18 +482,18 @@ npm install -g xmind-generator-mcp
 
 ---
 
-#### /Vengineer:utils:report-bug - 报告问题
+#### /utils:report-bug - 报告问题
 
 **功能**：引导创建详细的 bug 报告
 
 **语法**：
 ```bash
-/Vengineer:utils:report-bug "[问题简述]"
+/utils:report-bug "[问题简述]"
 ```
 
 **示例**：
 ```bash
-/Vengineer:utils:report-bug "用户登录后 session 丢失"
+/utils:report-bug "用户登录后 session 丢失"
 ```
 
 **报告结构**：
@@ -526,7 +526,7 @@ npm install -g xmind-generator-mcp
 **用途**：分析功能需求，识别用户流程和边缘情况
 
 **何时使用**：
-- 在 `/Vengineer:core:plan` 之后验证需求
+- 在 `/core:plan` 之后验证需求
 - 需要识别潜在的用户场景
 - 确保需求完整性
 
@@ -546,7 +546,7 @@ npm install -g xmind-generator-mcp
 **使用示例**：
 ```bash
 # 在 plan 命令中自动调用
-/Vengineer:core:plan "使用 WebSocket 实现实时通知"
+/core:plan "使用 WebSocket 实现实时通知"
 # 会自动研究 WebSocket 最佳实践
 ```
 
@@ -763,22 +763,22 @@ severity: high
 
 ```bash
 # 步骤 1：创建详细计划
-/Vengineer:core:plan "实现用户权限系统，包括角色、权限和管理界面"
+/core:plan "实现用户权限系统，包括角色、权限和管理界面"
 
 # 步骤 2：深化计划细节
-/Vengineer:core:deepen-plan plans/permission-system.md
+/core:deepen-plan plans/permission-system.md
 
 # 步骤 3：评审计划
-/Vengineer:core:plan-review plans/permission-system.md
+/core:plan-review plans/permission-system.md
 
 # 步骤 4：执行实施
-/Vengineer:core:work plans/permission-system.md
+/core:work plans/permission-system.md
 
 # 步骤 5：审查代码
-/Vengineer:core:review
+/core:review
 
 # 步骤 6：生成 PR 摘要
-/Vengineer:utils:pr-summary-cn develop
+/utils:pr-summary-cn develop
 ```
 
 ---
@@ -787,14 +787,14 @@ severity: high
 
 ```bash
 # 方式 1：审查当前分支
-/Vengineer:core:review
+/core:review
 
 # 方式 2：审查特定分支
-/Vengineer:core:review "feature/authentication"
+/core:review "feature/authentication"
 
 # 方式 3：审查后生成摘要
-/Vengineer:core:review
-/Vengineer:utils:pr-summary-cn master
+/core:review
+/utils:pr-summary-cn master
 ```
 
 ---
@@ -803,7 +803,7 @@ severity: high
 
 ```bash
 # 步骤 1：扫描所有 TODO
-/Vengineer:utils:resolve-todos src/
+/utils:resolve-todos src/
 
 # 步骤 2：查看生成的任务清单
 # （agent 会自动创建 TODO 列表）
@@ -818,7 +818,7 @@ severity: high
 
 ```bash
 # 步骤 1：记录解决方案
-/Vengineer:core:compound "解决了 Nginx 在高并发下的连接超时问题：
+/core:compound "解决了 Nginx 在高并发下的连接超时问题：
 
 问题现象：超过 1000 并发时出现 502 错误
 解决方案：
@@ -836,10 +836,10 @@ severity: high
 
 ```bash
 # 创建自定义命令
-/Vengineer:utils:create-command "创建一个数据库迁移助手命令"
+/utils:create-command "创建一个数据库迁移助手命令"
 
 # 创建自定义 agent
-/Vengineer:utils:create-agent-skill "创建一个 Kubernetes 部署专家 agent"
+/utils:create-agent-skill "创建一个 Kubernetes 部署专家 agent"
 ```
 
 ---
@@ -849,9 +849,9 @@ severity: high
 ### 7.1 命令使用
 
 ✅ **推荐做法**：
-- 在开始新功能前使用 `/Vengineer:core:plan`
-- 定期使用 `/Vengineer:core:review` 保持代码质量
-- 使用 `/Vengineer:core:compound` 积累团队知识
+- 在开始新功能前使用 `/core:plan`
+- 定期使用 `/core:review` 保持代码质量
+- 使用 `/core:compound` 积累团队知识
 
 ❌ **避免**：
 - 跳过计划直接编码（小型功能除外）
@@ -865,8 +865,8 @@ severity: high
 | 场景 | 推荐的 Agent |
 |------|-------------|
 | 需要研究最佳实践 | 等待 plan 命令自动调用 research agents |
-| 审查代码架构 | `/Vengineer:core:review` 会自动调用 architecture-strategist |
-| 性能问题分析 | `/Vengineer:core:review` 会自动调用 performance-oracle |
+| 审查代码架构 | `/core:review` 会自动调用 architecture-strategist |
+| 性能问题分析 | `/core:review` 会自动调用 performance-oracle |
 | 需要理解代码历史 | 手动调用 git-history-analyzer |
 
 ---
@@ -897,24 +897,24 @@ severity: high
 **并行处理**：
 ```bash
 # 利用 agent 并行研究
-/Vengineer:core:plan "复杂功能"
+/core:plan "复杂功能"
 # 会自动启动 3 个 research agents 并行工作
 
 # 并行代码审查
-/Vengineer:core:review
+/core:review
 # 会启动多个 review agents 同时分析
 ```
 
 **增量使用**：
 ```bash
 # 新手：从简单命令开始
-/Vengineer:utils:pr-summary-cn master
+/utils:pr-summary-cn master
 
 # 中级：添加规划流程
-/Vengineer:core:plan "小功能" + /Vengineer:core:work
+/core:plan "小功能" + /core:work
 
 # 高级：完整工作流
-/Vengineer:core:plan → deepen-plan → plan-review → work → review
+/core:plan → deepen-plan → plan-review → work → review
 ```
 
 ---
@@ -927,7 +927,7 @@ severity: high
 
 **问题**：
 ```
-Error: Command not found: /Vengineer:core:plan
+Error: Command not found: /core:plan
 ```
 
 **解决方案**：
@@ -1011,7 +1011,7 @@ ls -la /tmp/xmind-generator-mcp
 **命令内帮助**：
 ```bash
 # 查看命令帮助
-/Vengineer:core:plan --help
+/core:plan --help
 
 # 查看插件信息
 /plugin info rio-plugin
@@ -1029,11 +1029,11 @@ ls -la /tmp/xmind-generator-mcp
 
 ```bash
 # 完整的 CI/CD 工作流
-/Vengineer:core:plan "新功能"
-→ /Vengineer:core:deepen-plan
-→ /Vengineer:core:work
-→ /Vengineer:core:review
-→ /Vengineer:utils:pr-summary-cn
+/core:plan "新功能"
+→ /core:deepen-plan
+→ /core:work
+→ /core:review
+→ /utils:pr-summary-cn
 → (GitHub MCP 自动创建 PR)
 ```
 
@@ -1041,10 +1041,10 @@ ls -la /tmp/xmind-generator-mcp
 
 ```bash
 # 创建领域专用 agents
-/Vengineer:utils:create-agent-skill "创建金融科技领域的安全审计专家"
+/utils:create-agent-skill "创建金融科技领域的安全审计专家"
 
 # 创建团队特定命令
-/Vengineer:utils:create-command "创建符合团队规范的代码格式化命令"
+/utils:create-command "创建符合团队规范的代码格式化命令"
 ```
 
 ### 9.3 性能优化
@@ -1059,13 +1059,13 @@ ls -la /tmp/xmind-generator-mcp
 
 **rio-cc-market** 提供了一个**完整的 AI 辅助开发工作流**：
 
-1. **规划** → `/Vengineer:core:plan`
-2. **深化** → `/Vengineer:core:deepen-plan`
-3. **评审** → `/Vengineer:core:plan-review`
-4. **执行** → `/Vengineer:core:work`
-5. **审查** → `/Vengineer:core:review`
-6. **总结** → `/Vengineer:utils:pr-summary-cn`
-7. **积累** → `/Vengineer:core:compound`
+1. **规划** → `/core:plan`
+2. **深化** → `/core:deepen-plan`
+3. **评审** → `/core:plan-review`
+4. **执行** → `/core:work`
+5. **审查** → `/core:review`
+6. **总结** → `/utils:pr-summary-cn`
+7. **积累** → `/core:compound`
 
 立即开始使用，体验 AI 赋能的高效开发！🚀
 

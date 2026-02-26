@@ -78,16 +78,16 @@ nano ~/.claude/plugins/rio-plugin/.mcp.json
 
 ```bash
 # 创建项目计划
-/Vengineer:core:plan "实现用户认证系统"
+/core:plan "实现用户认证系统"
 
 # 执行计划
-/Vengineer:core:work plans/auth-system.md
+/core:work plans/auth-system.md
 
 # 审查代码
-/Vengineer:core:review
+/core:review
 
 # 生成 PR 摘要
-/Vengineer:utils:pr-summary-cn master
+/utils:pr-summary-cn master
 ```
 
 ## 📖 完整文档
@@ -113,21 +113,21 @@ nano ~/.claude/plugins/rio-plugin/.mcp.json
 
 ### 场景 1：新功能开发
 ```bash
-/Vengineer:core:plan "添加用户权限系统"
-/Vengineer:core:deepen-plan plans/permission-system.md
-/Vengineer:core:plan-review plans/permission-system.md
-/Vengineer:core:work plans/permission-system.md
+/core:plan "添加用户权限系统"
+/core:deepen-plan plans/permission-system.md
+/core:plan-review plans/permission-system.md
+/core:work plans/permission-system.md
 ```
 
 ### 场景 2：代码审查
 ```bash
-/Vengineer:core:review "审查 feature/auth 分支"
-/Vengineer:utils:pr-summary-cn master
+/core:review "审查 feature/auth 分支"
+/utils:pr-summary-cn master
 ```
 
 ### 场景 3：问题解决和知识积累
 ```bash
-/Vengineer:core:compound "数据库连接池超时问题解决方案"
+/core:compound "数据库连接池超时问题解决方案"
 ```
 
 ## 🏗️ 项目结构
