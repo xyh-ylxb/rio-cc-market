@@ -1,5 +1,5 @@
 ---
-name: resolve_parallel
+name: utils:resolve-todos
 description: Resolve all TODO comments using parallel processing
 argument-hint: "[file-or-dir-path]"
 allowed-tools: Read, Write, Edit, Bash, Task, AskUserQuestion, Grep, Glob

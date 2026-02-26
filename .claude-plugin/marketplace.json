@@ -11,9 +11,18 @@
       "description": "A collection of useful utilities and commands for daily development workflow",
       "path": "plugins/rio-plugin",
       "commands": [
-        "rio:greet",
-        "rio:status",
-        "rio:todo"
+        "Vengineer:core:plan",
+        "Vengineer:core:work",
+        "Vengineer:core:review",
+        "Vengineer:core:compound",
+        "Vengineer:core:deepen-plan",
+        "Vengineer:core:plan-review",
+        "Vengineer:utils:pr-summary-cn",
+        "Vengineer:utils:resolve-todos",
+        "Vengineer:utils:create-agent-skill",
+        "Vengineer:utils:create-command",
+        "Vengineer:utils:heal-skill",
+        "Vengineer:utils:report-bug"
       ]
     }
   ]

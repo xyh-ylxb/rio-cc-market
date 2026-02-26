@@ -1,5 +1,5 @@
 ---
-name: report-bug-issue
+name: utils:report-bug
 description: Report a bug or request a feature in the Vengineer plugin
 argument-hint: "[optional: brief description of the bug or feature]"
 ---
