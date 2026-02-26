@@ -11,18 +11,18 @@
       "version": "1.0.0",
       "description": "A collection of useful utilities and commands for daily development workflow",
       "commands": [
-        "./commands/core/plan.md",
-        "./commands/core/work.md",
-        "./commands/core/review.md",
-        "./commands/core/compound.md",
-        "./commands/core/deepen-plan.md",
-        "./commands/core/plan_review.md",
-        "./commands/pr-summary-cn.md",
-        "./commands/resolve-todos-in-repo.md",
-        "./commands/utils/create-agent-skill.md",
-        "./commands/utils/create-command.md",
-        "./commands/utils/heal-skill.md",
-        "./commands/utils/report-bug-issue.md"
+        "./plugins/rio-plugin/commands/core/plan.md",
+        "./plugins/rio-plugin/commands/core/work.md",
+        "./plugins/rio-plugin/commands/core/review.md",
+        "./plugins/rio-plugin/commands/core/compound.md",
+        "./plugins/rio-plugin/commands/core/deepen-plan.md",
+        "./plugins/rio-plugin/commands/core/plan_review.md",
+        "./plugins/rio-plugin/commands/pr-summary-cn.md",
+        "./plugins/rio-plugin/commands/resolve-todos-in-repo.md",
+        "./plugins/rio-plugin/commands/utils/create-agent-skill.md",
+        "./plugins/rio-plugin/commands/utils/create-command.md",
+        "./plugins/rio-plugin/commands/utils/heal-skill.md",
+        "./plugins/rio-plugin/commands/utils/report-bug-issue.md"
       ]
     }
   ]
