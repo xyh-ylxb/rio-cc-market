@@ -7,7 +7,6 @@
     "name": "xyh-ylxb",
     "email": "yunhao.xia@vita.cn"
   },
-  "source": "https://github.com/xyh-ylxb/rio-cc-market.git",
   "plugins": [
     {
       "name": "rio-plugin",
