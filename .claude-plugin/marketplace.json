@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Rio's Claude Code plugin marketplace",
   "author": "Rio",
-  "owner": "xyh-ylxb",
+  "owner": {
+    "name": "xyh-ylxb",
+    "email": "yunhao.xia@vita.cn"
+  },
   "source": "https://github.com/xyh-ylxb/rio-cc-market.git",
   "plugins": [
     {
