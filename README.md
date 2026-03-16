@@ -1,19 +1,20 @@
 # 🚀 rio-cc-market
 
-> 一个功能强大的 Claude Code 插件市场，提供完整的开发工作流解决方案
+> `codex` 分支提供完整的 Codex 安装包；Claude 的 commands、agents、skills 已迁成 Codex skill，MCP 提供可执行注册脚本。
 
-[![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.com/claude-code)
+[![Codex](https://img.shields.io/badge/Codex-Compatible-green)](#)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Plugins](https://img.shields.io/badge/Plugins-1+-purple)](#)
 
 ## ✨ 特性
 
-**rio-cc-market** 是一个企业级的 Claude Code 插件市场，提供：
+**rio-cc-market** 的 `codex` 分支提供 Codex 适配版 Rio 工作流，包含：
 
-- 🎯 **12 个专业命令** - 从项目规划到代码审查的完整工作流
-- 🤖 **12 个智能 Agents** - 覆盖研究、审查、分析等各个领域
-- 🎨 **5 个可复用 Skills** - Git 管理、知识积累、工具创建
-- 🔌 **7 个 MCP 服务器** - 代码搜索、文档查询、Git 集成、可视化
+- 🎯 **12 个 command skills** - 对应原 Claude commands
+- 🤖 **12 个 agent skills** - 对应原 Claude agents
+- 🧰 **5 个迁移后的 Rio skills** - 对应原 Claude skills
+- 🌿 **Git worktree 辅助** - 适配 Codex 的并行分支工作流
+- 🔌 **7 个 MCP servers** - 支持通过 Codex CLI 注册
 
 ## 📦 插件概览
 
@@ -21,21 +22,40 @@
 
 一个功能丰富的开发工具集，包含：
 
-#### 🎯 核心功能（6 个命令）
-- **项目规划** (`core:plan`) - 将需求转化为结构化计划
-- **计划执行** (`core:work`) - 自动执行项目计划
-- **代码审查** (`core:review`) - 多维度代码质量审查
-- **知识积累** (`core:compound`) - 记录和复用解决方案
-- **深化计划** (`core:deepen-plan`) - 为计划添加深度和细节
-- **计划评审** (`core:plan-review`) - 多专家并行评审计划
+#### 🎯 Command Skills（12 个）
+- **`rio-core-plan`** - 将需求转化为结构化计划
+- **`rio-core-work`** - 执行计划并跟踪验证
+- **`rio-core-review`** - 多视角代码审查
+- **`rio-core-compound`** - 沉淀已解决问题
+- **`rio-core-deepen-plan`** - 深化计划细节
+- **`rio-core-plan-review`** - 计划评审
+- **`rio-utils-pr-summary-cn`** - 生成中文 PR 摘要
+- **`rio-utils-resolve-todos`** - 解析和处理 TODO
+- **`rio-utils-create-agent-skill`** - 创建 Codex skill
+- **`rio-utils-create-command`** - 创建 Codex 工作流入口
+- **`rio-utils-heal-skill`** - 修复损坏技能
+- **`rio-utils-report-bug`** - 生成缺陷/需求报告
 
-#### 🛠️ 工具集（6 个命令）
-- **PR 摘要** (`utils:pr-summary-cn`) - 生成中文 PR 摘要
-- **TODO 解析** (`utils:resolve-todos`) - 并行处理所有 TODO
-- **创建 Agent** (`utils:create-agent-skill`) - 创建自定义 AI agents
-- **创建命令** (`utils:create-command`) - 创建自定义 slash 命令
-- **修复技能** (`utils:heal-skill`) - 修复损坏的技能文件
-- **报告问题** (`utils:report-bug`) - 引导创建详细的 bug 报告
+#### 🤖 Agent Skills（12 个）
+- `rio-agent-general`
+- `rio-agent-spec-flow-analyzer`
+- `rio-agent-best-practices-researcher`
+- `rio-agent-framework-docs-researcher`
+- `rio-agent-git-history-analyzer`
+- `rio-agent-repo-research-analyst`
+- `rio-agent-architecture-strategist`
+- `rio-agent-bobo-cpp-reviewer`
+- `rio-agent-bobo-python-reviewer`
+- `rio-agent-code-simplicity-reviewer`
+- `rio-agent-pattern-recognition-specialist`
+- `rio-agent-performance-oracle`
+
+#### 🛠️ Migrated Skills（5 个）
+- `rio-compound-docs`
+- `rio-create-agent-skills`
+- `rio-git-worktree`
+- `rio-hook-creator`
+- `rio-skill-creator`
 
 #### 🔌 MCP 服务器（7 个）
 
@@ -54,102 +74,102 @@
 
 ## 🚀 快速开始
 
-### 安装插件
+### 安装 Codex 版本
 
 ```bash
-# 添加 marketplace
-/plugin marketplace add https://github.com/xyh-ylxb/rio-cc-market.git
+# 拉取 codex 分支
+git clone -b codex https://github.com/xyh-ylxb/rio-cc-market.git
+cd rio-cc-market
 
-# 安装 rio-plugin
-/plugin install rio-plugin@rio-cc-market
+# 安装 Codex 技能包
+./install-codex.sh
+
+# 可选：注册全部 MCP servers
+./install-codex-mcp.sh
 ```
 
-### 配置 GitHub Token（推荐）
+### MCP 配置（可选）
 
 ```bash
-# 编辑 MCP 配置
-nano ~/.claude/plugins/rio-plugin/.mcp.json
-
-# 替换占位符
-"GITHUB_PERSONAL_ACCESS_TOKEN": "你的 GitHub Token"
+# 查看安装后复制出来的 MCP 示例
+cat ~/.codex/rio-plugin/rio-mcp-servers.json
 ```
 
 ### 立即开始
 
 ```bash
-# 创建项目计划
-/core:plan "实现用户认证系统"
+# 让 Codex 为你规划需求
+使用 rio-core-plan 处理 "实现用户认证系统"
 
-# 执行计划
-/core:work plans/auth-system.md
+# 让 Codex 执行一个计划文件
+使用 rio-core-work 执行 plans/auth-system.md
 
-# 审查代码
-/core:review
+# 让 Codex 审查当前改动
+使用 rio-core-review 做 code review
 
-# 生成 PR 摘要
-/utils:pr-summary-cn master
+# 用 worktree 管理并行分支
+~/.codex/skills/rio-git-worktree/scripts/worktree-manager.sh list
 ```
 
 ## 📖 完整文档
 
-查看 **[完整使用指南 (USAGE.md)](USAGE.md)** 了解：
+查看 **[完整使用指南 (USAGE.md)](USAGE.md)** 了解原始 Claude 插件内容，Codex 安装说明见 **[codex/README.md](codex/README.md)**：
 
-- 📋 所有命令的详细说明和示例
-- 🤖 所有 Agents 的功能和应用场景
-- 🎯 所有 Skills 的使用方法
-- 🔌 所有 MCP 服务器的配置和用途
-- 💡 实际使用场景和最佳实践
+- 📋 原始命令与工作流设计
+- 🎯 全量 Codex skill 映射
+- 🔌 MCP 服务器注册方式
+- 💡 两套运行时的差异
 
 ## 📊 功能一览
 
 | 类别 | 数量 | 说明 |
 |------|------|------|
-| **Commands** | 12 | Slash 命令，用于执行复杂工作流 |
-| **Agents** | 12 | 专业 AI agents，处理特定领域任务 |
-| **Skills** | 5 | 可复用的专业技能和工具 |
-| **MCP Servers** | 7 | 底层能力服务器（搜索、文档、Git 等） |
+| **Command Skills** | 12 | 对应原 Claude commands |
+| **Agent Skills** | 12 | 对应原 Claude agents |
+| **Migrated Skills** | 5 | 对应原 Claude skills |
+| **MCP Servers** | 7 | 可通过 `install-codex-mcp.sh` 注册 |
 
 ## 🎯 使用场景
 
 ### 场景 1：新功能开发
 ```bash
-/core:plan "添加用户权限系统"
-/core:deepen-plan plans/permission-system.md
-/core:plan-review plans/permission-system.md
-/core:work plans/permission-system.md
+使用 rio-core-plan 规划 "添加用户权限系统"
+使用 rio-core-deepen-plan 深化 plans/permission-system.md
+使用 rio-core-plan-review 评审 plans/permission-system.md
+使用 rio-core-work 执行 plans/permission-system.md
 ```
 
 ### 场景 2：代码审查
 ```bash
-/core:review "审查 feature/auth 分支"
-/utils:pr-summary-cn master
+使用 rio-core-review 审查 feature/auth 分支
+使用 rio-utils-pr-summary-cn 生成面向 master 的中文 PR 摘要
 ```
 
 ### 场景 3：问题解决和知识积累
 ```bash
-/core:compound "数据库连接池超时问题解决方案"
+使用 rio-core-compound 沉淀 "数据库连接池超时问题解决方案"
 ```
 
 ## 🏗️ 项目结构
 
 ```
 rio-cc-market/
-├── .claude-plugin/
-│   └── marketplace.json          # Marketplace 元数据
+├── codex/
+│   ├── mcp/                      # Codex MCP 配置与示例
+│   ├── skills/                   # Command / agent / migrated skills
+│   └── README.md                 # Codex 安装说明
+├── install-codex.sh              # Codex 安装脚本
+├── install-codex-mcp.sh          # Codex MCP 注册脚本
 ├── plugins/
 │   └── rio-plugin/
-│       ├── commands/             # 12 个 slash 命令
-│       │   ├── core/            # 核心功能命令
-│       │   └── utils/           # 工具命令
-│       ├── agents/              # 12 个 AI agents
-│       │   ├── core/            # 核心 agents
-│       │   ├── research/        # 研究类 agents
-│       │   └── review/          # 审查类 agents
-│       ├── skills/              # 5 个 skills
-│       ├── hooks/               # Plugin hooks
-│       └── .mcp.json            # MCP 服务器配置
-├── CLAUDE.md                     # Claude Code 指南
-├── USAGE.md                      # 完整使用指南
+│       ├── commands/             # Claude 命令定义（参考）
+│       ├── agents/               # Claude agents（参考）
+│       ├── skills/               # 原始 skills（参考）
+│       ├── hooks/                # Claude hooks（参考）
+│       └── .mcp.json             # MCP 源配置
+├── AGENTS.md                     # Codex 分支维护说明
+├── CLAUDE.md                     # 原始 Claude 说明
+├── USAGE.md                      # 原始使用指南
 └── README.md                     # 本文件
 ```
 
@@ -167,7 +187,7 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 🙏 致谢
 
-感谢 Claude Code 团队提供的强大插件系统！
+感谢 Claude Code 与 Codex 提供的工作流基础能力！
 
 ---
 
