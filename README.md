@@ -64,6 +64,18 @@
 /plugin install rio-plugin@rio-cc-market
 ```
 
+### 安装 Codex 版本
+
+`master` 分支继续提供 Claude Code marketplace 版本。Codex 请切到单独的 `codex` 分支安装：
+
+```bash
+git clone -b codex https://github.com/xyh-ylxb/rio-cc-market.git
+cd rio-cc-market
+./install-codex.sh
+```
+
+Codex 版本会把可用的 Rio 工作流安装到 `~/.codex/skills/`，并把 MCP 示例复制到 `~/.codex/rio-plugin/` 供手动合并。
+
 ### 配置 GitHub Token（推荐）
 
 ```bash
